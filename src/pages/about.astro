@@ -1,5 +1,7 @@
 ---
-import { transform } from "astro:schema";
+ 
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
 const pageTitle = "Обо мне";
 const identity = {
@@ -31,9 +33,7 @@ import '../styles/global.css';
   </head>
   <body>
    
-    <a href="/"> На главную</a>
-	<a href="/about/"> Обо мне</a>
-    <a href="/blog/"> Блог</a>
+    <Header />
     <h1>{pageTitle}</h1>
     <h2>... и моем новом сайте на Astro</h2>
     <p>Я прохожу вводный учебник по Astro. Это вторая страница моего сайта, и это первая страница, которую я создал самостоятельно!</p> 
@@ -51,7 +51,8 @@ import '../styles/global.css';
              {skills.map((skill) => <li class="skill">{skill}</li>)}
 
         </ul>
-       <style define:vars={{skillColor, fontWeight, textTransform}}>
+        <Footer /> 
+    <style define:vars={{skillColor, fontWeight, textTransform}}>
       h1 {
         color: purple;
         font-size: 4rem;
@@ -62,6 +63,8 @@ import '../styles/global.css';
         text-transform: var(--textTransform);
       }
     </style>
-</body>
+    <script> 
+	    import "../scripts/menu.js";
+	</script>
   </body>
 </html>
