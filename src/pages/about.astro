@@ -1,40 +1,17 @@
 ---
- 
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = "Обо мне";
 const identity = {
   firstName: "Остап",
   country: "Украина",
   occupation: "Веб-девелопер",
-  hobbies: ["фотография", "наблюдение за птицами", "бейсбол"],
+  hobbies: ["Крипта", "Баскетбол", "Собаки"],
 };
-
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Написание документации"];
-const happy = true;
-const finished = false;
-const goal = 3;
-
-const skillColor = "navy";
-const fontWeight = "bold";
-const textTransform = "uppercase";
-
-import '../styles/global.css';
 ---
-
-<html lang="ru">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} >
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-   
-    <Header />
     <h1>{pageTitle}</h1>
+    <BaseLayout pageTitle={pageTitle}>
     <h2>... и моем новом сайте на Astro</h2>
     <p>Я прохожу вводный учебник по Astro. Это вторая страница моего сайта, и это первая страница, которую я создал самостоятельно!</p> 
     <p>Сайт будет обновляться по мере прохождения учебника, так что заходите сюда снова и следите за моим прогрессом!</p>
@@ -51,20 +28,5 @@ import '../styles/global.css';
              {skills.map((skill) => <li class="skill">{skill}</li>)}
 
         </ul>
-        <Footer /> 
-    <style define:vars={{skillColor, fontWeight, textTransform}}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-      .skill {
-        color: {skillColor};
-        font-weight: var(--fontWeight);
-        text-transform: var(--textTransform);
-      }
-    </style>
-    <script> 
-	    import "../scripts/menu.js";
-	</script>
-  </body>
-</html>
+    </BaseLayout>
+      
