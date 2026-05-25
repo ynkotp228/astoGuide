@@ -38,6 +38,15 @@ h1 {
   text-transform: uppercase;
 }
 
+html.dark {
+  background-color: #0d0950;
+  color: #fff;
+}
+
+.dark .nav-links a {
+  color: #fff;
+}
+
 .nav-links a:hover,
 .nav-links a:focus {
   background-color: #ff9776;
